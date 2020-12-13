@@ -66,11 +66,11 @@
 												<p class="center-verticle DMG-output ml-3" data-target="element">25.000</p>
 											</div>
 											<div class="item d-flex" s>
-												<p class="center-verticle dmg-type-label w-100">Sát thương trung bình / đòn đánh vật lý:</p>
+												<p class="center-verticle dmg-type-label">Sát thương trung bình / đòn đánh vật lý:</p>
 												<p class="center-verticle DMG-output ml-3" data-target="physic_overall" style="margin-right: 0;margin-left: auto !important;">25.000</p>
 											</div>
 											<div class="item d-flex" s>
-												<p class="center-verticle dmg-type-label w-100">Sát thương trung bình / đòn đánh nguyên tố:</p>
+												<p class="center-verticle dmg-type-label">Sát thương trung bình / đòn đánh nguyên tố:</p>
 												<p class="center-verticle DMG-output ml-3" data-target="element_overall" style="margin-right: 0;margin-left: auto !important;">25.000</p>
 											</div>
 										</div>
