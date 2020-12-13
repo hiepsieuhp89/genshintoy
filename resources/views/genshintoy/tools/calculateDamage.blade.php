@@ -6,7 +6,7 @@
 						<div class="main-content">
 							<div class="title-bar d-flex">
 								<div class="title-content center-verticle mr-auto" style="color: white;">
-									Tính lượng sát thương đầu ra
+									Tính lượng sát thương tạo thành
 								</div>
 							</div>		
 							<div class="inner-content damage-calculator row">
