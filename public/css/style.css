@@ -1,0 +1,233 @@
+    a, a:hover{
+      color: black;
+    }
+    .d-flex{
+      flex-wrap: wrap;
+    }
+    #root{
+      
+    }
+    #root .container{
+      position: relative;
+      height: 100%;
+    }
+    .block-relative{
+      position: relative;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .content-section{
+      background-color: #00000073;
+        backdrop-filter: blur(10px);
+        margin-top: 50px;
+        border-radius: 10px;
+    }
+    .main-content{
+      padding: 25px;
+    }
+    .main-content .title-bar{
+        position: relative;
+        color: white;    
+        font-size: 20px;
+        height: 50px; 
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .center-verticle{
+      margin-top: auto;
+        margin-bottom: auto;
+    }
+    .character-list .item{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      padding: 15px;
+    }
+    .character-list .item a.char-direction{
+      overflow: hidden;
+      background-color: #757f8938;
+      border-radius: 5px;
+        box-shadow: 1px 2px 6px black;
+        width: 70px;
+        height: 70px;
+    }
+    .character-list .item a.char-element{
+      top: 5px;
+        right: 5px;
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-color: #3a3a3a;
+        box-shadow: -1px 1px 6px;
+        border-radius: 1em;
+    }
+    img.icon{
+      width: 100%;
+        object-fit: cover;
+    }
+    .form-control{
+      border:1px solid #000000;
+    }
+    .form-control:focus{
+      border-color: #babbbc;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(79 79 79 / 25%);
+    }
+    .weapon-filter{
+      height: 70px;
+      justify-content: center;
+    }
+    .weapon-filter .item{
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+    }
+    .weapon-filter .item .weapon-item{
+      opacity: 0.7;
+      border-radius: 5px;
+      box-shadow: 0px 1px 5px 0px;
+      overflow: hidden;
+        width: 40px;
+        height: 40px;
+        transition: 0.25s;
+    }
+    .weapon-item.active{
+      opacity: 1 !important;
+        box-shadow: 0 0 7px 3px #c8e0f7 !important;
+    }
+    .damage-calculator{
+      margin: 0;
+        width: 100%;
+    }
+    .damage-calculator .form-group{
+      width: 100%;
+    }
+    .damage-calculator label{
+      line-height: 1.5em;
+      text-shadow: -1px 1px 2px #000000, 1px 1px 2px #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+      text-align: left;
+      justify-content: inherit !important;
+      width: 320px;
+      color: white;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    .damage-calculator p{
+      text-align: right;
+      color: white;
+    }
+    .DMG_type_list .item{
+      margin: 1em;
+      padding: 1em;
+      border-radius: 10px;
+      background-color: #98989840;
+      justify-content: space-between;
+    }
+    p.DMG-output{
+      font-size: 26px;font-weight: bold;
+      text-shadow: -1px 1px 2px #000000, 1px 1px 2px #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+    }
+    .DMG_type_list .dmg-type-label{
+      text-transform: capitalize;
+      font-weight: 500;
+      text-shadow: -1px 1px 2px #000000, 1px 1px 2px #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+    }
+    .inner-content .quickview-info .image-collection{
+        background-color: #bfd5e7;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .inner-content .quickview-info .image-collection .title{
+      text-transform: uppercase;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .inner-content .quickview-info .personal-info-section .items,
+    .inner-content .quickview-info .best-build-section .items{
+       border-radius: 10px;
+       background-color: #0000007a;
+    }
+    .inner-content .quickview-info .personal-info-section .items .item ,
+    .inner-content .quickview-info .best-build-section .items .item{
+       height: 70px;
+       color: white;
+       text-transform: capitalize;
+    }
+    .inner-content .quickview-info .personal-info-section .items .item .data-type ,
+    .inner-content .quickview-info .best-build-section .items .item .data-type{
+      justify-content: space-between;
+    }
+    .inner-content .quickview-info .personal-info-section .items .item .data-type .title ,
+    .inner-content .quickview-info .best-build-section .items .item .data-type .title{
+      font-style: italic;
+    }
+    .inner-content .quickview-info .personal-info-section .items .item .data-type .content ,
+    .inner-content .quickview-info .best-build-section .items .item .data-type .content{
+      line-height: 1.5em;
+      color: bisque;
+      text-shadow: -1px 1px 2px #000000, 1px 1px 2px #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+    }
+    .inner-content .quickview-info .image-collection .image-type .item{
+       cursor: pointer;
+    }
+    .inner-content .quickview-info .image-collection .image-type .item.current{
+       background-color:white;
+    }
+    .inner-content .quickview-info .image-collection .image-type{
+        height: 30px;
+    }
+    .inner-content .quickview-info .image-collection .image-items .item{
+        background-color: white;
+        text-align: center;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 430px;
+        overflow: hidden;
+        display: none;
+    }
+    .inner-content .quickview-info .image-collection .image-items .item img{
+        height: 100%;
+        width: auto;
+    }
+    .inner-content .quickview-info .image-collection .item.current{
+        display: block !important;
+    }
+    .inner-content .best-build-section .best-build{
+      color: white;
+    }
+    .inner-content .best-build-section .best-build .heading,.inner-content .best-build-section .best-build .heading-section{
+      color: white;
+      text-transform: capitalize;
+      padding: 1em 1em .2em 1em;
+    }
+    .inner-content .best-build-section .best-build .line .item-build{
+      padding: .5em;
+      color: white;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+    .inner-content .best-build-section .best-build .line .item-build .icon{
+      width: 70px;
+      height: auto;
+      display: block;
+    }
+    .inner-content .best-build-section .best-build .line .item-build .icon img{
+      width: 65px;
+      height: auto;
+    }
+    .inner-content .best-build-section .best-build .line .item-build .passive{
+      padding: .5em 1em;
+      line-height: 1.1em;
+      display: block;
+    }
+
+    @media only screen and (max-width: 767px){
+      .inner-content .quickview-info .image-collection .image-type .item {
+          width: 33.3% !important;
+      }
+    }
