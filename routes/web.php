@@ -22,4 +22,4 @@ Route::get('/character/{id}',[indexController::class,"character_information"])->
 
 Route::get('/calculate',[indexController::class,"calculateDamage"])->name('genshintoy.calculateDamage');
 
-Route::get('/insertbucutung',[apiController::class,"insertDTB"]);
+//Route::get('/insertbucutung',[apiController::class,"insertDTB"]);
