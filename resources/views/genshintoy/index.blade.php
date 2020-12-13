@@ -31,7 +31,7 @@
 							<div class="inner-content character-list d-flex" style="justify-content: center;">
 								@foreach($character as $value)
 									<div class="item">
-										<a href="{{ route('genshintoy.character_information',['id'=>$value->id]) }}" data-wp="{{ $value->weapon_type_id }}" class="char-direction block-relative" title="{{ ucwords($value->name) }}">
+										<a href="{{ route('genshintoy.character_information',['id'=>$value->id]) }}" data-wp="{{ $value->weapon_type_id }}" class="char-direction block-relative" data-original-title="{{ ucwords($value->name) }}" title="{{ ucwords($value->name) }}">
 											<div class="character-icon block-relative">
 												<img class="icon" src="{{ $value->icon }}" alt="">
 											</div>
