@@ -15,7 +15,7 @@
 		*/
 		@font-face{
 	       font-family:gh;
-	       src:url('../public/fonts/ja-jp.ttf') format('truetype');
+	       src:url('{{asset('')}}fonts/ja-jp.ttf') format('truetype');
 	       font-weight:normal;
  			font-style:normal;
 	      }
@@ -75,6 +75,7 @@
 			border-collapse: collapse;
 			border-spacing: 0;
 		}
+
 	</style>
 	<link rel="stylesheet" href="css/style.css">
 </head>
