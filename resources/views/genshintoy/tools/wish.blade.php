@@ -17,8 +17,11 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
     margin: 0;
     padding: 20px;
     border-radius: 10px;">
-    <video style="display: none;" class="roll" data-type="one" maxrarity=3>
+    <video style="display: none;" class="roll" data-type="one" maxrarity=4>
     	<source src="https://gi-wish-simulator.uzairashraf.dev/videos/4starwish-single.mp4">
+    </video>
+    <video style="display: none;" class="roll" data-type="one" maxrarity=5>
+    	<source src="https://gi-wish-simulator.uzairashraf.dev/videos/5starwish-single.mp4">
     </video>
     <video style="display: none;" class="roll" data-type="ten" maxrarity=5>
     	<source src="https://gi-wish-simulator.uzairashraf.dev/videos/5starwish.mp4">
@@ -126,7 +129,7 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 @endsection
 @section('custom-script')
 <script>
-	const rarity = [3,4,5];
+	const rarity = [4,5];
 	function randomArray(a){
 		if(Math.floor(Math.random()*a.length) >= a.length)
 			return randomArray(a);
