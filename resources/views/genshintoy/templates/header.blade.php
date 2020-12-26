@@ -47,6 +47,14 @@
 		* {
 			cursor: url(https://gi-wish-simulator.uzairashraf.dev/8aeba2d07cdd0c056ad3142f5241d43d.png),auto;
 		}
+		video{
+	      position: absolute;
+	      left: 50%;
+	      top: 50%;
+	      width: 100%;
+	      z-index: 1000;
+	      transform: translate(-50%, -50%);
+	    }
 		body {
 			
 			background-color: black;
