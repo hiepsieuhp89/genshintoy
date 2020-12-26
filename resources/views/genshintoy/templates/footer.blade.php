@@ -8,9 +8,8 @@
         <script src="templates/scrollbot-master/scrollbot.js"></script>
         <script src="js/jquery_number.js"></script>
         <script>
-
             $(document).ready(function(){
-                        $('[data-toggle="popover"]').popover();  
+                $('[data-toggle="popover"]').popover();  
                 function filter_weapon(){//weapon filter, search key filter
                     var a = [];
                     $('.weapon-filter .item .weapon-item.active a.weapon-type').each(function () {
@@ -84,8 +83,8 @@
                             cal();
                         })
             })
-
             //sendcontent
         </script>
+        @yield('custom-script')
 </body>
 </html>

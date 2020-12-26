@@ -72,4 +72,7 @@ class indexController extends Controller
  	public function calculateDamage(){
  		return view('genshintoy.tools.calculateDamage');
  	}
+ 	public function wish(){
+ 		return view('genshintoy.tools.wish');
+ 	}
 }

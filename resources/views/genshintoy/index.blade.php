@@ -1,4 +1,7 @@
 @extends('genshintoy.templates.master')
+@section('body-background')
+https://images5.alphacoders.com/109/thumb-1920-1099191.jpg
+@endsection
 @section('content')
 <div class="content-section">
 				<div class="row">

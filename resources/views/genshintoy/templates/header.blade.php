@@ -13,7 +13,12 @@
 		   v2.0 | 20110126
 		   License: none (public domain)
 		*/
-
+		@font-face{
+	       font-family:gh;
+	       src:url('../public/fonts/ja-jp.ttf') format('truetype');
+	       font-weight:normal;
+ 			font-style:normal;
+	      }
 		html, body, div, span, applet, object, iframe,
 		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 		a, abbr, acronym, address, big, cite, code,
@@ -39,15 +44,20 @@
 		footer, header, hgroup, menu, nav, section {
 			display: block;
 		}
+		* {
+			cursor: url(https://gi-wish-simulator.uzairashraf.dev/8aeba2d07cdd0c056ad3142f5241d43d.png),auto;
+		}
 		body {
+			
 			background-color: black;
-			background-image: url(https://images5.alphacoders.com/109/thumb-1920-1099191.jpg);
+			background-image: url(@yield('body-background'));
 			background-attachment: fixed;
 			background-size: cover;
 			background-position: center;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			font-family: gh;
+			/*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-            "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
 			line-height: 1;
 		}
 		ol, ul {
@@ -94,6 +104,9 @@
 				      	<a href="{{ route('genshintoy.weapons') }}" class="dropdown-item">Vũ khí</a>
 				      	<a href="{{ route('genshintoy.artifacts') }}" class="dropdown-item">Thánh di vật</a>
 				      </div>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link" href="{{ route('genshintoy.wish') }}">Cầu nguyện</a>
 				    </li>
 				  </ul>
 				</div>
