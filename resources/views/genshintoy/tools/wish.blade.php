@@ -33,13 +33,13 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 					<div class="col-md-12 banner d-flex" style="justify-content: center;height: 10%">
 						<div class="d-flex items banner-items carousel-indicators" style="justify-content: center;">
 							<div data-target="#carousel-banner" data-slide-to="0" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://gi-wish-simulator.uzairashraf.dev/ff88befd8678600379f0cbd155a38c77.png" alt="" class="banner-image active" picked="https://i.imgur.com/MF0xV2K.png" unpicked="https://i.imgur.com/F5czVNd.png">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/F5czVNd.png" alt="" class="banner-image active" picked="https://i.imgur.com/MF0xV2K.png" unpicked="https://i.imgur.com/F5czVNd.png">
 							</div>
 							<div data-target="#carousel-banner" data-slide-to="1" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://gi-wish-simulator.uzairashraf.dev/ff88befd8678600379f0cbd155a38c77.png" alt="" class="banner-image" picked="https://i.imgur.com/JHjzojm.png" unpicked="https://i.imgur.com/hM1Q35b.png">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/hM1Q35b.png" alt="" class="banner-image" picked="https://i.imgur.com/JHjzojm.png" unpicked="https://i.imgur.com/hM1Q35b.png">
 							</div>
 							<div data-target="#carousel-banner" data-slide-to="2" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://gi-wish-simulator.uzairashraf.dev/ff88befd8678600379f0cbd155a38c77.png" alt="" class="banner-image" picked="https://i.imgur.com/Bc0V7s5.png" unpicked="https://i.imgur.com/9ScBoNk.png">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/9ScBoNk.png" alt="" class="banner-image" picked="https://i.imgur.com/Bc0V7s5.png" unpicked="https://i.imgur.com/9ScBoNk.png">
 							</div>
 						</div>
 					</div>
