@@ -228,8 +228,9 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 		})
 		$('.gacha').on('click',function(){
 			var rar = randomArray(rarity);
-			console.log(rar);
 			$('video.roll[data-type="'+ $(this).attr('data-type') +'"][maxrarity='+ rar +']').show().trigger('play');
+			amount[currentbanner['fate_type']] -= $(this).attr('data-type')=='one'?1:$(this).attr('data-type')=='ten'?10:0;
+			updatebanner();
 		})
 		$('video').on('play',function(){
 			$('.skip-btn').show();
