@@ -74,15 +74,7 @@ class indexController extends Controller
  		return view('genshintoy.tools.calculateDamage');
  	}
  	public function wish(){
- 		if(!Cookie::get('WishData')){
-            $data = json_encode(
-            [
-                'amount' => ['primogem'=>999999,'intertwined'=>999999,'acquaint'=>999999],
-                'fates_used' => [0=> 0,1=> 0,2=> 0], 
-                'fates_used_from_the_last' => [0=> 0,1=> 0,2=> 0]
-            ],true);
-            Cookie::queue('WishData',$data,3456789);
-        }
+ 		
  		$WishData = (array) json_decode(Cookie::get('WishData'));
         $data = [
  			'amount' => (array) $WishData['amount'],
