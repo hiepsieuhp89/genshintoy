@@ -8,6 +8,12 @@
         <script src="templates/scrollbot-master/scrollbot.js"></script>
         <script src="js/jquery_number.js"></script>
         <script>
+            var csrf_token = '{{ csrf_token() }}';
+            $.ajaxSetup({
+            headers: {
+                    'X-CSRF-TOKEN': csrf_token
+                }
+            });
             $(document).ready(function(){
                 $('[data-toggle="popover"]').popover();  
                 function filter_weapon(){//weapon filter, search key filter

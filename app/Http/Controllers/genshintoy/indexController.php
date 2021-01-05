@@ -5,6 +5,7 @@ namespace App\Http\Controllers\genshintoy;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+use Cookie;
 use App\Models\Character;
 use App\Models\WeaponType;
 use App\Models\Weapon;
@@ -73,6 +74,88 @@ class indexController extends Controller
  		return view('genshintoy.tools.calculateDamage');
  	}
  	public function wish(){
- 		return view('genshintoy.tools.wish');
+ 		if(!Cookie::get('WishData')){
+            $data = json_encode(
+            [
+                'amount' => ['primogem'=>999999,'intertwined'=>999999,'acquaint'=>999999],
+                'fates_used' => [0=> 0,1=> 0,2=> 0], 
+                'fates_used_from_the_last' => [0=> 0,1=> 0,2=> 0]
+            ],true);
+            Cookie::queue('WishData',$data,3456789);
+        }
+ 		$WishData = (array) json_decode(Cookie::get('WishData'));
+        $data = [
+ 			'amount' => (array) $WishData['amount'],
+ 			'fates_used' => (array) $WishData['fates_used'],
+ 			'fates_used_from_the_last' => (array) $WishData['fates_used_from_the_last']
+ 		];
+ 		//dd($data);
+ 		return view('genshintoy.tools.wish',$data);
+ 	}
+ 	public function getRandom($data){
+ 		$total_rate = 0;
+ 		$distribution = [];
+ 		foreach($data as $name => $rate){
+ 			$total_rate += $rate;
+ 			$distribution[$name] = $total_rate;
+ 		}
+ 		$rand = mt_rand(0,$total_rate-1);
+ 		foreach($distribution as $name => $weight){
+ 			if($rand < $weight)
+ 				return $name;
+ 		}
+ 	}
+ 	public function wishExtract(Request $req){
+ 		$data = json_encode([
+ 			'amount' => $req->amount,
+ 			'fates_used' => $req->fates_used, 
+ 			'fates_used_from_the_last' => $req->fates_used_from_the_last
+ 		]);
+ 		Cookie::queue('WishData', $data, 3456789);
+		if($req->fates_used_from_the_last == 90){
+			$maxrarity = $this->getRandom([
+		 		'5star' => 0.6,
+		 		'4star' => 5.1,
+		 		'3star' => 94.3
+		 	]);
+			$data = json_encode([
+		 		'amount' => $req->amount,
+		 		'fates_used' => $req->fates_used, 
+		 		'fates_used_from_the_last' => 0
+		 	]);
+		 	Cookie::queue('WishData', $data, 3456789);
+ 			return response($maxrarity);
+ 		}
+ 		if($req->fates_used_from_the_last <= 75){
+ 			$maxrarity = $this->getRandom([
+		 		'5star' => 0.6,
+		 		'4star' => 5.1,
+		 		'3star' => 94.3
+		 	]);
+		 	if($maxrarity == '5star'){
+		 		$data = json_encode([
+		 			'amount' => $req->amount,
+		 			'fates_used' => $req->fates_used, 
+		 			'fates_used_from_the_last' => 0
+		 		]);
+		 		Cookie::queue('WishData', $data, 3456789);
+		 	}
+ 			return response($maxrarity);
+ 		}
+ 		if($req->fates_used_from_the_last > 75){
+ 			$maxrarity = $this->getRandom([
+		 		'5star' => 50,
+		 		'4star' => 5.1,
+		 		'3star' => 94.3
+		 	]);
+		 	if($maxrarity == '5star'){
+		 		$data = json_encode([
+		 			'amount' => $req->amount,
+		 			'fates_used' => $req->fates_used, 
+		 			'fates_used_from_the_last' => 0
+		 		]);
+		 	}
+ 			return response($maxrarity);
+ 		}
  	}
 }

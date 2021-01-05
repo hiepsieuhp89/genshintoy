@@ -22,5 +22,6 @@ Route::get('/character/{id}',[indexController::class,"character_information"])->
 
 Route::get('/calculate',[indexController::class,"calculateDamage"])->name('genshintoy.calculateDamage');
 Route::get('/wish',[indexController::class,"wish"])->name('genshintoy.wish');
+Route::post('/wish',[indexController::class,"wishExtract"])->name('wish.extract');
 
 //Route::get('/insertbucutung',[apiController::class,"insertDTB"]);

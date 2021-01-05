@@ -33,13 +33,13 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 					<div class="col-md-12 banner d-flex" style="justify-content: center;height: 10%">
 						<div class="d-flex items banner-items carousel-indicators" style="justify-content: center;">
 							<div data-target="#carousel-banner" data-slide-to="0" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/F5czVNd.png" alt="" class="banner-image active" picked="https://i.imgur.com/MF0xV2K.png" unpicked="https://i.imgur.com/F5czVNd.png" title="Cầu nguyện nhân vật" data-fate ="intertwined">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/F5czVNd.png" alt="" class="banner-image active" picked="https://i.imgur.com/MF0xV2K.png" unpicked="https://i.imgur.com/F5czVNd.png" title="Cầu nguyện nhân vật" data-fate ="intertwined" index="0">
 							</div>
 							<div data-target="#carousel-banner" data-slide-to="1" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/hM1Q35b.png" alt="" class="banner-image" picked="https://i.imgur.com/JHjzojm.png" unpicked="https://i.imgur.com/hM1Q35b.png" title="Cầu nguyện vũ khí" data-fate ="intertwined">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/hM1Q35b.png" alt="" class="banner-image" picked="https://i.imgur.com/JHjzojm.png" unpicked="https://i.imgur.com/hM1Q35b.png" title="Cầu nguyện vũ khí" data-fate ="intertwined" index="1">
 							</div>
 							<div data-target="#carousel-banner" data-slide-to="2" class="item banner-item p-1 d-flex" style="width: 140px;height: auto;">
-								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/9ScBoNk.png" alt="" class="banner-image" picked="https://i.imgur.com/Bc0V7s5.png" unpicked="https://i.imgur.com/9ScBoNk.png" title="Cầu nguyện thường" data-fate ="acquaint">
+								<img style="width: 100%;height: auto;    margin-top: auto;" src="https://i.imgur.com/9ScBoNk.png" alt="" class="banner-image" picked="https://i.imgur.com/Bc0V7s5.png" unpicked="https://i.imgur.com/9ScBoNk.png" title="Cầu nguyện thường" data-fate ="acquaint" index="2">
 							</div>
 						</div>
 					</div>
@@ -142,6 +142,7 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 <script>
 	const rarity = [4,5];
 	var fate_type;
+	var rar;
 	var currentbanner = {
 		'fate_type' : null,
 		'name' : null,
@@ -152,10 +153,20 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 		'acquaint' : "https://static.wikia.nocookie.net/gensin-impact/images/2/22/Item_Acquaint_Fate.png"
 	}
 	var amount = {
-		'primogem': 999999,
-		'intertwined': 99999,
-		'acquaint': 99999
+		'primogem' : parseInt('{{ $amount['primogem'] }}'),
+		'intertwined' : parseInt('{{ $amount['intertwined'] }}'),
+		'acquaint' : parseInt('{{ $amount['acquaint'] }}'),
 	};
+	var fates_used = {
+		0 : parseInt('{{ $fates_used[0] }}'),
+		1 : parseInt('{{ $fates_used[1] }}'),
+		2 : parseInt('{{ $fates_used[2] }}'),
+	}
+	var fates_used_from_the_last_5star = {
+		0 : parseInt('{{ $fates_used_from_the_last[0] }}'),
+		1 : parseInt('{{ $fates_used_from_the_last[1] }}'),
+		2 : parseInt('{{ $fates_used_from_the_last[2] }}'),
+	}
 	function randomArray(a){
 		if(Math.floor(Math.random()*a.length) >= a.length)
 			return randomArray(a);
@@ -192,6 +203,7 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 					$(this).attr('src',$(this).attr('picked'));
 					currentbanner['name']= $(this).attr('title');
 					currentbanner['fate_type'] = $(this).attr('data-fate').toLowerCase();
+					currentbanner['index'] = parseInt($(this).attr('index'));
 				}
 				else
 					$(this).attr('src',$(this).attr('unpicked'));
@@ -200,6 +212,9 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 			updatebannername();
 			updateamount();
 
+		}
+		function toNumber(a){
+			return parseInt(a);
 		}
 		$('.banner-item img').on('click',function(){
 			$.each($('.banner-item img'),function(){
@@ -227,10 +242,27 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 			updatebanner();
 		})
 		$('.gacha').on('click',function(){
-			var rar = randomArray(rarity);
-			$('video.roll[data-type="'+ $(this).attr('data-type') +'"][maxrarity='+ rar +']').show().trigger('play');
-			amount[currentbanner['fate_type']] -= $(this).attr('data-type')=='one'?1:$(this).attr('data-type')=='ten'?10:0;
-			updatebanner();
+			var s = $(this).attr('data-type')=='one'?1:$(this).attr('data-type')=='ten'?10:0;
+			var ele = this;
+			fates_used[toNumber($('.banner-item img.active').attr('index'))] += s;
+			amount[currentbanner['fate_type']] -= s;
+			$.ajax({
+				'url' : '{{ route('wish.extract') }}',
+				'method' : 'post',
+				'data' : {
+					'name' : 'wish',
+					'type' : currentbanner['fate_type'],
+					'index' : currentbanner['index'],
+					'fates_used' : fates_used,
+					'fates_used_from_the_last' : fates_used_from_the_last_5star,
+					'amount' : amount
+				},
+				success: function(a){
+					rar = (a == '5star')?5:4;
+					$('video.roll[data-type="'+ $(ele).attr('data-type') +'"][maxrarity='+ rar +']').show().trigger('play');
+					updatebanner();
+				}
+			})
 		})
 		$('video').on('play',function(){
 			$('.skip-btn').show();
