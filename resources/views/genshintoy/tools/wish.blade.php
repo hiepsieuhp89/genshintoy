@@ -10,6 +10,29 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
 	.navigation.menu{
 		display: none;
 	}
+	.pull-result{
+		background-color: #36343e;
+	}
+	.pull-result .objects .object{
+		height: 100%;
+		background-color: #7a8c9b;
+		overflow: hidden;
+		position: relative;
+		width: 8%;
+	}
+	.pull-result .objects .object .frame{
+		position: relative;
+		width: auto;
+		height: 100%;
+	}
+	.pull-result .objects .object .object-image{
+		position: absolute;
+	    left: 50%;
+	    top: 20%;
+	    transform: translate(-50%, 0);
+	    width: 200%;
+	    height: auto;
+	}
 </style>
 <div class="content-section h-100" style="
 	background-color: transparent; 
@@ -17,6 +40,59 @@ https://gi-wish-simulator.uzairashraf.dev/0236cba43ee34e7100a781778c9f1bc3.png
     margin: 0;
     padding: 20px;
     border-radius: 10px;">
+    <div class="pull_section" style="z-index: 99999;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;">
+    	<div class="pull-result" style="    width: 100%;height: 100%;">
+    		<div class="objects" style="width: 100%;height: 100%;
+    display: flex;justify-content: center;">
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    			<div class="object">
+    				<img src="https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Bennett_Portrait.png" alt="" class="object-image">
+    				<img src="https://i.imgur.com/ssss6Lt.png" alt="" class="frame">
+    			</div>
+    		</div>
+    	</div>
+    </div>
     <video style="display: none;" class="roll" data-type="one" maxrarity=4>
     	<source src="https://gi-wish-simulator.uzairashraf.dev/videos/4starwish-single.mp4">
     </video>

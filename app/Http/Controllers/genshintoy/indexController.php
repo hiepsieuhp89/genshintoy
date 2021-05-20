@@ -104,12 +104,8 @@ class indexController extends Controller
  			'fates_used_from_the_last' => $req->fates_used_from_the_last
  		]);
  		Cookie::queue('WishData', $data, 3456789);
-		if($req->fates_used_from_the_last == 90){
-			$maxrarity = $this->getRandom([
-		 		'5star' => 0.6,
-		 		'4star' => 5.1,
-		 		'3star' => 94.3
-		 	]);
+		if($req->fates_used_from_the_last >= 90){
+			$maxrarity = '5star';
 			$data = json_encode([
 		 		'amount' => $req->amount,
 		 		'fates_used' => $req->fates_used, 
